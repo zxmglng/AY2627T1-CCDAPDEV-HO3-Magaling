@@ -40,7 +40,7 @@ function checkAnswer() {
     $("#answer").val("");
     
     generateQuestion();
-    if (score >= 5) {
+    if (score == 5) {
         $("#div-question").hide();
         $("#div-score").show();
     }
