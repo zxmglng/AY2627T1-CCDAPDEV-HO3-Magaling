@@ -22,8 +22,31 @@ function generateQuestion() {
     $("#question").text(num1 + " " + operators[operator] + " " + num2);
 }
 
-function checkAnswer() {
-    let answer = Number
 
+function checkAnswer() {
+    let answer = Number($("#answer").val());
+    if (answer == correctAnswer) {
+        score++;
+
+        $("#message").text("Correct!");
+        $("#message").css("color", "green");
+    }
+    else {
+        $("#message").text("Wrong! Correct answer is " + correctAnswer);
+        $("#message").css("color", "red");
+    }
+
+    $("#score").text(score);
+    $("#answer").val("");
+    
+    generateQuestion();
+    if (score >= 5) {
+        $("#div-question").hide();
+        $("#div-score").show();
+    }
 }
 
+
+function playAgain() {
+
+}
